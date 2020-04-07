@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>icon / 22pt / default / instagram</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="92.3761912%" y1="7.02944435%" x2="5.57101755%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#E7CC00" offset="0%"></stop>
+            <stop stop-color="#FC9003" offset="17.3432221%"></stop>
+            <stop stop-color="#FF423A" offset="43.2221284%"></stop>
+            <stop stop-color="#F72594" offset="69.5418074%"></stop>
+            <stop stop-color="#A948FC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="icon-/-22pt-/-default-/-instagram" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="base" fill="#D8D8D8" fill-rule="nonzero" opacity="0" x="0" y="0" width="22" height="22"></rect>
+        <g id="instagram" transform="translate(1.000000, 1.000000)" fill-rule="nonzero">
+            <path d="M5,-0.75 L15,-0.75 C18.1756373,-0.75 20.75,1.82436269 20.75,5 L20.75,15 C20.75,18.1756373 18.1756373,20.75 15,20.75 L5,20.75 C1.82436269,20.75 -0.75,18.1756373 -0.75,15 L-0.75,5 C-0.75,1.82436269 1.82436269,-0.75 5,-0.75 Z M5,0.75 C2.65278981,0.75 0.75,2.65278981 0.75,5 L0.75,15 C0.75,17.3472102 2.65278981,19.25 5,19.25 L15,19.25 C17.3472102,19.25 19.25,17.3472102 19.25,15 L19.25,5 C19.25,2.65278981 17.3472102,0.75 15,0.75 L5,0.75 Z" id="Rectangle" fill="#FFFFFF"></path>
+            <path d="M10,15.75 C13.1756373,15.75 15.75,13.1756373 15.75,10 C15.75,6.82436269 13.1756373,4.25 10,4.25 C6.82436269,4.25 4.25,6.82436269 4.25,10 C4.25,13.1756373 6.82436269,15.75 10,15.75 Z M10,14.25 C7.65278981,14.25 5.75,12.3472102 5.75,10 C5.75,7.65278981 7.65278981,5.75 10,5.75 C12.3472102,5.75 14.25,7.65278981 14.25,10 C14.25,12.3472102 12.3472102,14.25 10,14.25 Z" id="Oval" fill="url(#linearGradient-1)"></path>
+            <path d="M16.8602507,4.11621283 C16.8602507,4.66844593 16.4125123,5.11621283 15.8601871,5.11621283 C15.3079891,5.11621283 14.8602507,4.66844593 14.8602507,4.11621283 C14.8602507,3.56385249 15.3079891,3.11621283 15.8601871,3.11621283 C16.4125123,3.11621283 16.8602507,3.56385249 16.8602507,4.11621283 L16.8602507,4.11621283 Z" id="Path" fill="#E2D70E"></path>
+        </g>
+    </g>
+</svg>

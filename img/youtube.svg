@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>icon / 22pt / default / youtube</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon-/-22pt-/-default-/-youtube" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="base" fill="#D8D8D8" fill-rule="nonzero" opacity="0" x="0" y="0" width="22" height="22"></rect>
+        <g id="youtube" transform="translate(1.000000, 1.000000)" fill-rule="nonzero">
+            <path d="M5,-0.75 L15,-0.75 C18.1756373,-0.75 20.75,1.82436269 20.75,5 L20.75,15 C20.75,18.1756373 18.1756373,20.75 15,20.75 L5,20.75 C1.82436269,20.75 -0.75,18.1756373 -0.75,15 L-0.75,5 C-0.75,1.82436269 1.82436269,-0.75 5,-0.75 Z M5,0.75 C2.65278981,0.75 0.75,2.65278981 0.75,5 L0.75,15 C0.75,17.3472102 2.65278981,19.25 5,19.25 L15,19.25 C17.3472102,19.25 19.25,17.3472102 19.25,15 L19.25,5 C19.25,2.65278981 17.3472102,0.75 15,0.75 L5,0.75 Z" id="Rectangle" fill="#FFFFFF"></path>
+            <path d="M8.98603966,13.4131677 L14.2883467,10.5618486 C14.8125582,10.2799535 14.8152926,9.52906004 14.293148,9.2433546 L8.99084096,6.34205525 C8.49103675,6.06857398 7.88082887,6.4302665 7.88082887,7 L7.88082887,12.7526185 C7.88082887,13.3199427 8.48637887,13.6818606 8.98603966,13.4131677 Z M9.38082887,11.4977414 L9.38082887,8.26531761 L12.3602205,9.89557157 L9.38082887,11.4977414 Z" id="Path" fill="#E60808"></path>
+        </g>
+    </g>
+</svg>
