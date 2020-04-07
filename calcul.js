@@ -4,9 +4,11 @@ $(document).ready(function() {
   $('.btn_modal').click(function() {
     let id = $(this).attr('data-target');
     $('.modalblock[data-id="' + id + '"]').addClass('show');
+    $('body').css('position', 'fixed');
   });
   $('.close').click(function() {
-    $(this).parents('.modalblock').removeClass('show')
+    $(this).parents('.modalblock').removeClass('show');
+    $('body').css('position', 'relative');
   });
   // скрол к товарам после обработки запроса и анимация блоков товаров
     // $("html, body").animate({scrollTop: $(".products").height()},"slow");
