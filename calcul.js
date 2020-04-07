@@ -8,7 +8,7 @@ $(document).ready(function() {
   });
   $('.close').click(function() {
     $(this).parents('.modalblock').removeClass('show');
-    $('body').css('position', 'relative');
+    $('body').css('position', 'static');
   });
   // скрол к товарам после обработки запроса и анимация блоков товаров
     // $("html, body").animate({scrollTop: $(".products").height()},"slow");
