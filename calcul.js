@@ -10,7 +10,9 @@ $(document).ready(function() {
     $(this).parents('.modalblock').removeClass('show');
     $('body').css('position', 'static');
   });
+  
   // скрол к товарам после обработки запроса и анимация блоков товаров
+  function prodAnimate(){
     let item = $('.products_block .item');
     $("html, body").animate({scrollTop: $(".products").height()},"slow");
     item.each(function(){
@@ -18,6 +20,7 @@ $(document).ready(function() {
       $(this).css('animation-delay', delay).addClass('bounceInDown');
     });
     return false;
+  };
 
   // раскрытие сеотекста на моб.версии
   $('.show_all').on("click", function(e) {
