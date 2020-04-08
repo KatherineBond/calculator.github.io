@@ -11,9 +11,13 @@ $(document).ready(function() {
     $('body').css('position', 'static');
   });
   // скрол к товарам после обработки запроса и анимация блоков товаров
-    // $("html, body").animate({scrollTop: $(".products").height()},"slow");
-    // $('.products_block .item').addClass('bounceInDown');
-    // return false;
+    let item = $('.products_block .item');
+    $("html, body").animate({scrollTop: $(".products").height()},"slow");
+    item.each(function(){
+      let delay = $(this).attr('data-delay');
+      $(this).css('animation-delay', delay).addClass('bounceInDown');
+    });
+    return false;
 
   // раскрытие сеотекста на моб.версии
   $('.show_all').on("click", function(e) {
