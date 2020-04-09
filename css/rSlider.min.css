@@ -1,0 +1,122 @@
+.rs-container * {
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.rs-container {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 45px;
+  position: relative
+}
+
+.rs-container .rs-bg, .rs-container .rs-selected {
+  background-color:#202429;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  border-radius: 3px
+}
+
+.rs-container .rs-selected {
+  background-color: #65bd00;
+  transition: all .2s linear;
+  width: 0
+}
+
+.rs-container.disabled .rs-selected {
+  background-color: #ccc;
+  border-color: #bbb
+}
+
+.rs-container .rs-pointer {
+  height: 11px;
+  width: 11px;
+  border-radius: 50%;
+  background: #65bd00;
+  border: none;
+  box-shadow: 0 0 0px 7px rgba(101, 189, 0, 0.2);
+  cursor: pointer;
+  left: -10px;
+  position: absolute;
+  top: 5px;
+  transition: all .2s linear;
+}
+
+.rs-container.disabled .rs-pointer {
+  border-color: #ccc;
+  cursor: default
+}
+
+.rs-container .rs-pointer::after {
+  left: auto;
+  right: 12px
+}
+
+.rs-container.sliding .rs-pointer, .rs-container.sliding .rs-selected {
+  transition: none
+}
+
+.rs-container .rs-scale {
+  left: 0;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  display: flex;
+}
+
+.rs-container .rs-scale span {
+  float: left;
+  position: relative
+}
+.rs-container .rs-scale span:first-child ins:after,
+.rs-container .rs-scale span:last-child ins:after{
+  content: '%'
+}
+.rs-container.rs-noscale span::before {
+  display: none
+}
+
+.rs-container.rs-noscale span:first-child::before, .rs-container.rs-noscale span:last-child::before {
+  display: block
+}
+
+.rs-container .rs-scale span:last-child {
+  margin-left: -1px;
+  width: 0
+}
+
+.rs-container .rs-scale span ins {
+  color: #9B9B9B;
+  display: inline-block;
+  font-size: 12px;
+  margin-top: 20px;
+  text-decoration: none
+}
+
+.rs-container.disabled .rs-scale span ins {
+  color: #999
+}
+
+.rs-tooltip {
+  color: #9B9B9B;
+  width: auto;
+  border-radius: 3px;
+  position: absolute;
+  transform: translate(-50%, -35px);
+  left: 6px;
+  text-align: center;
+  font-size: 13px;
+  top: 10px;
+}
+.rs-tooltip:after{content: '%'}
+.rs-container.disabled .rs-tooltip {
+  border-color: #ccc;
+  color: #999
+}

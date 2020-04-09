@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Калькулятор подбора сортов семян</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/rSlider.min.css">
   <link rel="stylesheet" href="css/calcul_style.min.css">
 </head>
 
@@ -107,7 +108,7 @@
   </header>
   <div class="calcul_block">
     <div class="container">
-      <div class="d-flex justify-content-between align-items-start top">
+      <div class="d-flex justify-content-between justify-content-md-center align-items-start top">
         <h1>Калькулятор подбора сортов семян</h1>
         <button type="button" class="btn_info btn_modal" data-target="info">
           <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -128,13 +129,8 @@
                   </svg>
                 </button>
               </div>
-              <div class="range_percent">
-                <span class="percent"><output id="Output1" class="output">0</output>%</span>
-                <span class="value">Средний</span>
-              </div>
             </label>
-            <input type="range" id="gdskill1" name="gdskill[1]" class="custom-range" max="24" value="0" oninput="Output1.value = gdskill1.value">
-            <p class="points"></p>
+            <input type="text" id="thcSlider" class="range">
           </div>
           <div class="col-12 col-lg-4 col-md-6 cbd">
             <label for="cbd_range">
@@ -147,14 +143,8 @@
                   </svg>
                 </button>
               </div>
-              <div class="range_percent">
-                <span class="percent"><output id="Output2" class="output">0</output>%</span>
-                <span class="value">Средний</span>
-              </div>
             </label>
-            <input type="range" id="gdskill2" name="gdskill[2]" class="custom-range" max="10" value="0"
-            list="ticks" oninput="Output2.value = gdskill2.value">
-            <p class="points"></p>
+            <input type="text" id="cbdSlider" class="range">
           </div>
           <div class="taste col-12 col-lg-4 col-md-6">
             <label>
@@ -418,8 +408,9 @@
     </div>
   </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" defer></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous" defer></script>
+<script src="rSlider.min.js" defer></script>
 <script src="calcul.js" defer></script>
 </html>

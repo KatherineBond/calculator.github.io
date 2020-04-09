@@ -10,14 +10,15 @@ $(document).ready(function() {
     $(this).parents('.modalblock').removeClass('show');
     $('body').css('position', 'static');
   });
-  
+
   // скрол к товарам после обработки запроса и анимация блоков товаров
+  // варианты анимации .bounceIn .bounceInDown .zoomIn
   function prodAnimate(){
     let item = $('.products_block .item');
     $("html, body").animate({scrollTop: $(".products").height()},"slow");
     item.each(function(){
       let delay = $(this).attr('data-delay');
-      $(this).css('animation-delay', delay).addClass('bounceInDown');
+      $(this).css('animation-delay', delay).addClass('bounceIn');
     });
     return false;
   };
@@ -33,40 +34,26 @@ $(document).ready(function() {
     trigger: 'focus'
   });
 
-  // слайдеры тгк и кбд
-  $('input[type=range]').wrap("<div class='range'></div>");
-  let i = 1;
-  $('.range').each(function() {
-    let n = this.getElementsByTagName('input')[0].value;
-    let x = (n / 100) * (this.getElementsByTagName('input')[0].offsetWidth);
-    this.id = 'range' + i;
-    if (this.getElementsByTagName('input')[0].value == 0) {
-      this.className = "range"
-    } else {
-      this.className = "range rangeM"
-    }
-    this.innerHTML += "<style>#" + this.id + " input[type=range]::-webkit-slider-runnable-track {background:linear-gradient(to right, #65bd00 0%, #65bd00 " + n + "%, #202429 " + n + "%)}</style>";
-    i++;
-  });
-  $('input[type=range]').on("input", function() {
-    let a = this.value;
-    let c = (100 / this.max) * a;
-    let p = (a / 100) * (this.offsetWidth);
-    if (a == 0) {
-      this.parentNode.className = "range"
-    } else {
-      this.parentNode.className = "range rangeM"
-    }
-    this.parentNode.getElementsByTagName('style')[0].innerHTML += "#" + this.parentNode.id + " input[type=range]::-webkit-slider-runnable-track {background:linear-gradient(to right, #65bd00 0%, #65bd00 " + c + "%, #202429 " + c + "%)}";
-  });
-  $('.range').each(function(){
-    let end = this.getElementsByTagName('input')[0].max,
-    sib = $(this).siblings('.points');
-    sib.append('<span>0%</span>');
-    sib.append('<span>' + end / 2 + '%</span>');
-    sib.append('<span>' + end + '%</span>');
-  });
-
+  var thcSlider = new rSlider({
+        target: '#thcSlider',
+        values: {min: 0, max: 20},
+        step: 1,
+        range: true,
+        set: [5, 10],
+        scale: true,
+        tooltip: true,
+        labels: false,
+    });
+    var cbdSlider = new rSlider({
+          target: '#cbdSlider',
+          values: {min: 0, max: 10},
+          step: 1,
+          range: true,
+          set: [5, 10],
+          scale: true,
+          tooltip: true,
+          labels: false,
+      });
   //кастомный select
   document.querySelector('.custom-sel-wrapper').addEventListener('click', function() {
     this.querySelector('.custom-sel').classList.toggle('open');
