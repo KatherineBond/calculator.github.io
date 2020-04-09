@@ -33,27 +33,37 @@ $(document).ready(function() {
   $('.btn_info').popover({
     trigger: 'focus'
   });
-
-  var thcSlider = new rSlider({
-        target: '#thcSlider',
-        values: {min: 0, max: 20},
-        step: 1,
-        range: false,
-        set: [5],
-        scale: true,
-        tooltip: true,
-        labels: false,
-    });
-    var cbdSlider = new rSlider({
-          target: '#cbdSlider',
-          values: {min: 0, max: 10},
+  $(function(){
+    let thcSlider = new rSlider({
+          target: '#thcSlider',
+          values: {min: 0, max: 20},
           step: 1,
           range: true,
-          set: [5, 10],
+          set: [4, 10],
           scale: true,
           tooltip: true,
           labels: false,
+          onChange: function (vals) {
+            $('#thcSlider').attr('value', vals);
+            if(vals[0] > 5){cbdSlider.setValues(6,10)}            
+          }
       });
+      let cbdSlider = new rSlider({
+            target: '#cbdSlider',
+            values: {min: 0, max: 10},
+            step: 1,
+            range: true,
+            set: [0, 1],
+            scale: true,
+            tooltip: true,
+            labels: false,
+            onChange: function (vals) {
+              $('#cbdSlider').attr('value',vals)
+            }
+        });
+
+    });
+
   //кастомный select
   document.querySelector('.custom-sel-wrapper').addEventListener('click', function() {
     this.querySelector('.custom-sel').classList.toggle('open');
