@@ -28,29 +28,42 @@ $(document).ready(function() {
     e.preventDefault();
     $(this).siblings('.toggle_xs').toggleClass('show');
   });
-
   // кнопка доп информации
   $('.btn_info').popover({
     trigger: 'focus'
   });
   $(function(){
+    let thcRanges = {
+      '0': [3, 4],
+      '1': [0, 3],
+      '2': [0, 2],
+      '3': [0, 1]
+    };
+    let cbdRanges = {
+      '0': [3, 4],
+      '1': [2, 3],
+      '2': [2, 3],
+      '3': [0, 2]
+    };
     let thcSlider = new rSlider({
           target: '#thcSlider',
-          values: {min: 0, max: 20},
+          values: {min: 0, max: 4},
           step: 1,
           range: true,
-          set: [4, 10],
+          set: [0, 1],
           scale: true,
           tooltip: true,
           labels: false,
           onChange: function (vals) {
-            $('#thcSlider').attr('value', vals);
-            if(vals[0] > 5){cbdSlider.setValues(6,10)}            
+            let thcVal = vals.split(','),
+            minValthc = Math.min(thcRanges[thcVal[0]][0], thcRanges[thcVal[1]][0]),
+            maxValthc = Math.max(thcRanges[thcVal[0]][1], thcRanges[thcVal[1]][1]);
+            cbdSlider.setValues(minValthc,maxValthc);
           }
       });
       let cbdSlider = new rSlider({
             target: '#cbdSlider',
-            values: {min: 0, max: 10},
+            values: {min: 0, max: 4},
             step: 1,
             range: true,
             set: [0, 1],
@@ -58,7 +71,10 @@ $(document).ready(function() {
             tooltip: true,
             labels: false,
             onChange: function (vals) {
-              $('#cbdSlider').attr('value',vals)
+              let cbdVal = vals.split(','),
+              minValcbd = Math.min(cbdRanges[cbdVal[0]][0], cbdRanges[cbdVal[1]][0]),
+              maxValcbd = Math.max(cbdRanges[cbdVal[0]][1], cbdRanges[cbdVal[1]][1]);
+              thcSlider.setValues(minValcbd,maxValcbd);
             }
         });
 
