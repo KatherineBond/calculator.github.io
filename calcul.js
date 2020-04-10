@@ -59,8 +59,14 @@ $(document).ready(function() {
           onChange: function (vals) {
             let thcVal = vals.split(','),
             minValthc = Math.min(thcRanges[thcVal[0]][0], thcRanges[thcVal[1]][0]),
-            maxValthc = Math.max(thcRanges[thcVal[0]][1], thcRanges[thcVal[1]][1]);
-            cbdSlider.setValues(minValthc,maxValthc);
+            maxValthc = Math.max(thcRanges[thcVal[0]][1], thcRanges[thcVal[1]][1]),
+            cbd = cbdSlider.getValue().split(',');
+            console.log(maxValthc);
+            if (minValthc < cbd[0] < maxValthc){
+              if (minValthc < cbd[1] < maxValthc){
+                cbdSlider.setValues(minValthc,maxValthc);
+              }
+            }
           }
       });
       let cbdSlider = new rSlider({
@@ -75,13 +81,17 @@ $(document).ready(function() {
             onChange: function (vals) {
               let cbdVal = vals.split(','),
               minValcbd = Math.min(cbdRanges[cbdVal[0]][0], cbdRanges[cbdVal[1]][0]),
-              maxValcbd = Math.max(cbdRanges[cbdVal[0]][1], cbdRanges[cbdVal[1]][1]);
-              thcSlider.setValues(minValcbd,maxValcbd);
+              maxValcbd = Math.max(cbdRanges[cbdVal[0]][1], cbdRanges[cbdVal[1]][1]),
+              thc = thcSlider.getValue().split(',');
+              if ( minValcbd < thc[0] < maxValcbd) {
+                if (minValcbd < thc[1] < maxValcbd){
+                  thcSlider.setValues(minValcbd,maxValcbd);
+                };
+              }
             }
         });
 
     });
-
   //кастомный select
   document.querySelector('.custom-sel-wrapper').addEventListener('click', function() {
     this.querySelector('.custom-sel').classList.toggle('open');
