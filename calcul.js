@@ -33,18 +33,18 @@ $(document).ready(function() {
     trigger: 'focus'
   });
   $(function(){
-    let thcRanges = {
-      '0': [3, 4],
-      '1': [0, 3],
-      '2': [0, 2],
-      '3': [0, 1],
-      '4': [0, 1]
-    };
-    let cbdRanges = {
+    let cdbForThcRanges = {
       '0': [3, 4],
       '1': [2, 3],
-      '2': [2, 3],
-      '3': [0, 2],
+      '2': [1, 2],
+      '3': [1, 2],
+      '4': [0, 1]
+    };
+    let thcForCbdRanges = {
+      '0': [3, 4],
+      '1': [2, 3],
+      '2': [2, 2],
+      '3': [1, 2],
       '4': [0, 1]
     };
     let thcSlider = new rSlider({
@@ -57,15 +57,13 @@ $(document).ready(function() {
           tooltip: true,
           labels: false,
           onChange: function (vals) {
-            let thcVal = vals.split(','),
-            cbd = cbdSlider.getValue().split(','),
-            minValthc = Math.min(thcRanges[thcVal[0]][0], thcRanges[thcVal[1]][0]),
-            maxValthc = Math.max(thcRanges[thcVal[0]][1], thcRanges[thcVal[1]][1]),
-            mincbd = minValthc < cbd[0] < maxValthc,
-            maxcbd = minValthc < cbd[1] < maxValthc;
-            if ((mincbd == true)&&(maxcbd == true)){
-                cbdSlider.setValues(minValthc,maxValthc);
-            }
+            let thcVal = vals.split(',');
+            let cbd = cbdSlider.getValue().split(',');
+            let minValcbd = Math.min(cdbForThcRanges[thcVal[0]][0], cdbForThcRanges[thcVal[1]][0]);
+            let maxValcbd = Math.max(cdbForThcRanges[thcVal[0]][1], cdbForThcRanges[thcVal[1]][1]);
+            minValcbd = minValcbd < cbd[0] && cbd[0]< maxValcbd ? cbd[0] : minValcbd;
+            maxValcbd = minValcbd < cbd[1] && cbd[1]< maxValcbd ? cbd[1] : maxValcbd;
+            cbdSlider.setValues(minValcbd,maxValcbd);
           }
       });
       let cbdSlider = new rSlider({
@@ -78,15 +76,13 @@ $(document).ready(function() {
             tooltip: true,
             labels: false,
             onChange: function (vals) {
-              let cbdVal = vals.split(','),
-              thc = thcSlider.getValue().split(','),
-              minValcbd = Math.min(cbdRanges[cbdVal[0]][0], cbdRanges[cbdVal[1]][0]),
-              maxValcbd = Math.max(cbdRanges[cbdVal[0]][1], cbdRanges[cbdVal[1]][1]),
-              minthc = minValcbd < thc[0] < maxValcbd,
-              maxthc = minValcbd < thc[1] < maxValcbd;
-              if ((minthc == true)&&(maxthc == true)){
-                  thcSlider.setValues(minValcbd,maxValcbd);
-              }
+              let cbdVal = vals.split(',');
+              let thc = thcSlider.getValue().split(',');
+              let minValthc = Math.min(thcForCbdRanges[cbdVal[0]][0], thcForCbdRanges[cbdVal[1]][0]);
+              let maxValthc = Math.max(thcForCbdRanges[cbdVal[0]][1], thcForCbdRanges[cbdVal[1]][1]);
+              minValthc = minValthc < thc[0] && thc[0]< maxValthc ? thc[0] : minValthc;
+              maxValthc = minValthc < thc[1] && thc[1]< maxValthc ? thc[1] : maxValthc;
+              thcSlider.setValues(minValthc,maxValthc);
             }
         });
 
