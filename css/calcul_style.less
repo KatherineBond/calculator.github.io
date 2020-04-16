@@ -372,6 +372,28 @@ header{
       color: @green
     }
   }
+  .stickers-block{
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    .sticker{
+      padding: 5px 10px;
+      display: block;
+      font-weight: 600;
+      text-align: center;
+      &.sticker-exclusive{background: #b12525;}
+      &.sticker-sale{background: #b12525;}
+      &.sticker-top{background: #00959e;}
+      &.sticker-new{background: #84bc0d;}
+      &.sticker-hit{background: #ffa816;}
+      &.sticker-sale-birthday{background: #cc8aae;}
+      &.sticker-sale-bf{background: #727264;}
+    }
+  }
   .products_block{
     display: flex;
     align-items: stretch;
@@ -415,7 +437,89 @@ header{
         padding: 7px 0;
         text-decoration: none;
         cursor: pointer;
+        border: none;
       }
+    }
+    .mainsite{
+      width: 200px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      padding: 7px;
+      .item-rating svg {
+          width: 15px;
+      }
+      &:hover{background: #171717}
+      .descript_product_page{
+        width:100%;
+        a.more_descript{display:none}
+      }
+      ._totalPrice.d-flex{
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .prdbrief_price span{
+        color:#fff;
+        font-size:20px;
+        font-weight:normal;
+        font-family: @AG;
+        &.old_price{
+          font-size: 16px;
+          color: #f33;
+          line-height: 20px;
+          text-decoration: line-through;
+        }
+        &.new_price{font-size: 20px}
+      }
+      .prdbrief_thumbnail{
+        margin-left:0;
+        table {
+          &,tbody{width: 100%}
+          tr td{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            a{
+              display: block;
+              overflow: hidden;
+              border-radius: 5px;
+              color: #fff;
+              &:hover .sticker{color: #fff}
+              img{width: 100%;}
+            }
+          }
+        }
+      }
+      .thc_content{
+        font-family: @AG;
+        font-size: 16px;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+      }
+      .product_brief_block{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .prdbrief_name{
+        font-family: @AG;
+        font-size: 16px;
+        a{
+          min-height: 40px;
+          display: block;
+          color: #fff;
+        }
+        span{
+          color: #686d74;
+          display: block;
+          font-size: 14px;
+        }
+      }
+      .stickers-block{border-radius: 0 0 5px 5px;overflow: hidden;}
     }
   }
 }
@@ -600,6 +704,10 @@ footer{
       width: 100%;
       max-width: 300px;
     }
+  }
+  .products .products_block .mainsite .prdbrief_price {
+    span.new_price{font-size: 15px}
+    span.old_price{font-size: 13px}
   }
 }
 @keyframes spin {

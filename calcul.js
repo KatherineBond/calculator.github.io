@@ -32,61 +32,45 @@ $(document).ready(function() {
   $('.btn_info').popover({
     trigger: 'focus'
   });
-  $(function(){
-    let cdbForThcRanges = {
-      '0': [3, 4],
-      '1': [2, 3],
-      '2': [1, 2],
-      '3': [1, 2],
-      '4': [0, 1]
-    };
-    let thcForCbdRanges = {
-      '0': [3, 4],
-      '1': [2, 3],
-      '2': [2, 2],
-      '3': [1, 2],
-      '4': [0, 1]
-    };
-    let thcSlider = new rSlider({
-          target: '#thcSlider',
-          values: {min: 0, max: 4},
-          step: 1,
-          range: true,
-          set: [0, 1],
-          scale: true,
-          tooltip: true,
-          labels: false,
-          onChange: function (vals) {
-            let thcVal = vals.split(',');
-            let cbd = cbdSlider.getValue().split(',');
-            let minValcbd = Math.min(cdbForThcRanges[thcVal[0]][0], cdbForThcRanges[thcVal[1]][0]);
-            let maxValcbd = Math.max(cdbForThcRanges[thcVal[0]][1], cdbForThcRanges[thcVal[1]][1]);
-            minValcbd = minValcbd < cbd[0] && cbd[0]< maxValcbd ? cbd[0] : minValcbd;
-            maxValcbd = minValcbd < cbd[1] && cbd[1]< maxValcbd ? cbd[1] : maxValcbd;
-            cbdSlider.setValues(minValcbd,maxValcbd);
-          }
-      });
-      let cbdSlider = new rSlider({
-            target: '#cbdSlider',
-            values: {min: 0, max: 4},
-            step: 1,
-            range: true,
-            set: [0, 1],
-            scale: true,
-            tooltip: true,
-            labels: false,
-            onChange: function (vals) {
-              let cbdVal = vals.split(',');
-              let thc = thcSlider.getValue().split(',');
-              let minValthc = Math.min(thcForCbdRanges[cbdVal[0]][0], thcForCbdRanges[cbdVal[1]][0]);
-              let maxValthc = Math.max(thcForCbdRanges[cbdVal[0]][1], thcForCbdRanges[cbdVal[1]][1]);
-              minValthc = minValthc < thc[0] && thc[0]< maxValthc ? thc[0] : minValthc;
-              maxValthc = minValthc < thc[1] && thc[1]< maxValthc ? thc[1] : maxValthc;
-              thcSlider.setValues(minValthc,maxValthc);
-            }
-        });
-
-    });
+  // $(function(){
+  //   let cdbForThcRanges = {
+  //     '0': [3, 4],
+  //     '1': [2, 3],
+  //     '2': [1, 2],
+  //     '3': [0, 1],
+  //     '4': [0, 0]
+  //   };
+  //   let thcSlider = new rSlider({
+  //         target: '#thcSlider',
+  //         values: {min: 0, max: 4},
+  //         step: 1,
+  //         range: true,
+  //         set: [0, 1],
+  //         scale: true,
+  //         tooltip: true,
+  //         labels: false,
+  //         onChange: function (vals) {
+  //           let thcVal = vals.split(',');
+  //           let cbd = cbdSlider.getValue().split(',');
+  //           let minValcbd = Math.min(cdbForThcRanges[thcVal[0]][0], cdbForThcRanges[thcVal[1]][0]);
+  //           let maxValcbd = Math.max(cdbForThcRanges[thcVal[0]][1], cdbForThcRanges[thcVal[1]][1]);
+  //           minValcbd = minValcbd < cbd[0] && cbd[0]< maxValcbd ? cbd[0] : minValcbd;
+  //           maxValcbd = minValcbd < cbd[1] && cbd[1]< maxValcbd ? cbd[1] : maxValcbd;
+  //           cbdSlider.setValues(minValcbd,maxValcbd);
+  //         }
+  //     });
+  //     let cbdSlider = new rSlider({
+  //           target: '#cbdSlider',
+  //           values: {min: 0, max: 4},
+  //           step: 1,
+  //           range: true,
+  //           set: [0, 1],
+  //           scale: true,
+  //           tooltip: true,
+  //           labels: false
+  //       });
+  //
+  //   });
   //кастомный select
   document.querySelector('.custom-sel-wrapper').addEventListener('click', function() {
     this.querySelector('.custom-sel').classList.toggle('open');
